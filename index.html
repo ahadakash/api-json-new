@@ -12,6 +12,9 @@
     <ul id="user-container">
 
     </ul>
+    <ul id="details-container">
+
+    </ul>
 
     <script>
         fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
@@ -20,13 +23,21 @@
 
         function diaplayUser(users) {
             const ul = document.getElementById("user-container");
+            const ul2 = document.getElementById("details-container");
 
             const username = users.map(user => user.email);
+            const userDetails = users.map(user => user.body)
             for (i = 0; i < username.length; i++) {
                 const users = username[i];
                 const li = document.createElement("li");
                 li.innerText = users;
                 ul.appendChild(li);
+
+                const body = userDetails[i];
+                const li2 = document.createElement("li");
+                li2.innerText = body;
+                ul2.appendChild(li2);
+
             }
         }
     </script>
