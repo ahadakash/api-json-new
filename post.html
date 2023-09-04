@@ -19,13 +19,16 @@
     <button id="submit">Submit</button>
     <script>
 
-        const postInfo = { title: 'foo', body: 'bar', userId: 1 };
+        // const postInfo = { title: 'foo', body: 'bar', userId: 1 };
 
         document.getElementById("submit").addEventListener("click", function (post) {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const postInf = { name: name, email: email };
             postOnfetch(postInf);
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+
 
         });
 
